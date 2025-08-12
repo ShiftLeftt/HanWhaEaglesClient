@@ -4,9 +4,10 @@
   "description": "",
   "main": "dist/index.js",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && npm run copy-assets",
+    "copy-assets": "cpx \"src/**/*.{html,css}\" dist && cpx \"*.html\" dist",
     "start": "node dist/index.js",
-    "dev": "nodemon --watch project/src --ext ts --exec \"npm run build && node dist/index.js\"",
+    "dev": "nodemon --watch src --watch \"*.html\" --ext ts,html,css --exec \"npm run build && node dist/index.js\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,6 +21,7 @@
   },
   "homepage": "https://github.com/ShiftLeftt/HanWhaEaglesClient#readme",
   "devDependencies": {
+    "cpx2": "^8.0.0",
     "nodemon": "^3.1.10",
     "ts-node": "^10.9.2"
   }
