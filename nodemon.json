@@ -1,0 +1,6 @@
+{
+  "watch": ["src"],
+  "ext": "ts,html,css,png,jpg,jpeg,gif,svg,webp,ico",
+  "ignore": ["dist", "node_modules", "*.log"],
+  "exec": "npm run build && node dist/js/index.js"
+}
